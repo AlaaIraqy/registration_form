@@ -1,0 +1,79 @@
+<html>
+    <body>
+        <div class=container>
+            <h1>Register<h1>
+            <form name="form" action="registration.php" method="post" onsubmit="return validate()">
+                <label class=labels for="name">Name:</label><br>
+                <input type="text"  name="name"><br>
+                <label class=labels for="email">Email:</label><br>
+                <input type="text"  name="email"><br>
+                <label class=labels for="password">Password:</label><br>
+                <input type="password" name="password"><br>
+                <label class=labels for="Cpassword">Confirm password:</label><br>
+                <input type="password" name="Cpassword"><br>
+                <button class=submit type="submit">submit</button>
+            </form>   
+            </div>
+            <style>
+                input[type=text], input[type=password] {
+                  width: 75%;
+                  padding: 16px;
+                  margin: 5px 0 22px 0;
+                  display: inline-block;
+                  border: solid;
+                  background: #f1f1f1;
+                }
+                .labels{
+                    font-size: x-large;
+                }
+                .submit {
+                  background-color: rgb(144, 160, 144);
+                  color: white;
+                  padding: 16px 20px;
+                  margin: 8px 10px;
+                  border: none;
+                  cursor: pointer;
+                  width: 25%;
+                  opacity: 0.8;
+                }
+                .submit:hover {
+                  opacity:1;
+                }
+                .container{
+                    padding: 16px;
+                    border: solid grey 1px;
+                    width: 40%;
+                    margin : 100px auto;
+                
+                }
+                                </style>
+                                <script>
+                                    function validate(){
+                                        let name=document.forms["form"]["name"].value;
+                                        let email=document.forms["form"]["email"].value;
+                                        let pass=document.forms["form"]["password"].value;
+                                        let cpass=document.forms["form"]["Cpassword"].value;
+                                        if(name==""){
+                                            alert("please enter name")
+                                            return false;
+                                        }
+                                        if(email==""){
+                                            alert("please enter email")
+                                            return false;
+                                        }
+                                        if(pass==""){
+                                            alert("please enter password")
+                                            return false;
+                                        }
+                                        if(cpass==""){
+                                            alert("please confirm password")
+                                            return false;
+                                        }
+                                         if(pass!=cpass){
+                                           alert("password confirmation failed")
+                                           return false;
+                                        }
+                                    }
+                                </script>
+    </body>
+    </html>

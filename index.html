@@ -1,0 +1,65 @@
+<html>
+        <body>
+            <div class=container>
+                <h1>Login</h1>
+            <form name="loginForm" method="post" action="login.php" onsubmit="return validateForm()">
+                <label class=labels for="email">Email:</label><br>
+                <input type="text"  name="email"><br>
+                <label class=labels for="password">Password:</label><br>
+                <input type="password" name="password">
+                <button class=submit type="submit">submit</button>
+            </form>   
+            <a class=createAccount href="register.html">Create account!</a>
+            </div>
+<style>
+input[type=text], input[type=password] {
+  width: 75%;
+  padding: 16px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: solid;
+  background: #f1f1f1;
+}
+.labels{
+    font-size: x-large;
+}
+.submit {
+  background-color: rgb(144, 160, 144);
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 10px;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  opacity: 0.8;
+}
+.submit:hover {
+  opacity:1;
+}
+.createAccount{
+    padding: 16px;
+    font-size: larger;
+}
+.createAccount:hover{
+    color: rgb(12, 94, 247);
+}
+.container{
+    padding: 16px;
+    border: solid grey 1px;
+    width: 40%;
+    margin : 100px auto;
+
+}
+                </style>
+                <script>
+                    function validateForm(){
+                        let x=document.forms["loginForm"]["email"].value;
+                        let y=document.forms["loginForm"]["password"].value;
+                        if(x==""||y==""){
+                            alert("invalid input");
+                            return false;
+                        }
+                    }
+                    </script>
+        </body>
+        </html>
